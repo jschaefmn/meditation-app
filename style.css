@@ -16,17 +16,58 @@
 .player-container {
   height: 80%;
   flex: 1;
-}
-
-.time-select {
-  background: lightblue;
-}
-
-.sound-picker {
-  background: lightgreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 
 .player-container {
-  background: lightcoral;
+  position: relative;
 }
+
+.player-container svg {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* this allows user to click on play button since SVG element is on top of play button */
+  pointer-events: none;
+}
+
+
+
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  font-size: 50px;
+}
+
+video {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -10;
+}
+
+.time-select button,
+.sound-picker button {
+  color: white;
+  width: 30%;
+  height: 10%;
+  background: none;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.time-select button:hover {
+  color: black;
+  background: white;
+}
+
